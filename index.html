@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <table>
+
+    </table>
+
+    <script>
+        const section = document.querySelector('table')
+        let dim = prompt('what dimension', ' ');
+        let dimNum = +dim;
+        console.log(dim)
+        console.log(typeof(dimNum))
+        console.log(dimNum ** 2);
+        for (let i = 0; i< dimNum; i ++){
+            let row = document.createElement('tr');
+            section.appendChild(row);
+            for (let k = 0; k<dimNum; k++) {
+                
+                
+                let datacell = document.createElement('td');
+               
+                let tdWidth = 400/dimNum;
+                datacell.style.width = tdWidth+'px'
+                row.appendChild(datacell);
+                datacell.addEventListener('mousemove', randomColor)
+            }
+            // let newDiv = document.createElement('td')
+            // let newWidth = 400/dimNum;
+            // console.log(newWidth)
+            // let allW = newWidth - 3;
+            // // let auto = ' auto'
+            // console.log(allW)
+            // newDiv.className = 'div'
+            // newDiv.style.width = allW +'px'
+            // section.appendChild(newDiv);
+            
+        }
+        function randomColor(e) {
+            let red = Math.floor(Math.random() * 256)
+            let green = Math.floor(Math.random() * 256)
+            let blue = Math.floor(Math.random() * 256)
+            // let rgb = `rgb(${red}, ${green}, ${blue})`
+            e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+            // return newDiv.style.background
+        }
+    </script>
+</body>
+</html>
